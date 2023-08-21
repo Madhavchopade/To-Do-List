@@ -1,0 +1,98 @@
+
+  <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div >
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center" >Hii {{userdetails.name}} Welcome...!</h3>
+              
+            
+              <div class="row justify-content-center">
+                <div class="col-md-2  text-center">
+                    <input class="btn btn-dark btn-lg" type="submit" value="Add Tasks" routerLink="/addtask"/>
+                    </div>
+                <div class="col-md-2  text-center">
+                    <input class="btn btn-primary btn-lg" type="submit" value="All Tasks" (click)="alltask()" />
+                    </div>
+                    <div class="col-md-2  text-center">
+                      <input class="btn btn-warning btn-lg" type="submit" value="Starting Task" (click)="starttask()"/>
+                      </div>
+                <div class="col-md-2  text-center">
+              <input class="btn btn-warning btn-lg" type="submit" value="Running Task" (click)="runningtask()"/>
+              </div>
+              <div class="col-md-2  text-center">
+                <input class="btn btn-danger btn-lg" type="submit" value="Pending Task"  (click)="pending()"/>
+                </div>
+                <div class="col-md-2 text-center">
+                    <input class="btn btn-success btn-lg" type="submit" value="Completed Tasks"  (click)="completedtask()"/>
+                    </div>
+             
+              <div class="card my-5">
+                <div class="card-body">
+                  <table class="table table-bordered table-striped">
+                    <thead class="thead-dark">
+                      <tr >
+                        <th scope="col" class="text-center">Task Name</th>
+                        <th scope="col" class="text-center">Description</th>
+                        <th scope="col" class="text-center">Status</th>
+                        <th scope="col" class="text-center">Date</th>
+                        <th scope="col" class="text-center">Delete</th>
+                        <th scope="col" class="text-center">Edit</th>
+                       
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let tasks of data1">
+                        
+                        <td class="text-center" >{{ tasks.tname }}</td>
+                        <td class="text-center">{{ tasks.tdescription }}</td>
+                        <td class="text-center">{{tasks.tstatus}}</td>
+                        <td class="text-center">{{tasks.date}}</td>
+                        <td class="text-center" (click)="delete(tasks.id)"><button class="btn btn-secondary ">Delete</button></td>
+                        <td class="text-center" (click)="update(tasks.id)" routerLink="/updatetask"><button class="btn btn-secondary ">Edit</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+          
+                  
+            
+             
+                 
+                  <div class="row justify-content-center">
+                    <div class="col-md-6  text-center">
+                      <nav aria-label="Page navigation example">
+                        <ul class="pagination ">
+                        
+                          <li class="page-item"><a class="page-link" (click)="page(0)">1</a></li>
+                          <li class="page-item"><a class="page-link" (click)="page(1)">2</a></li>
+                          <li class="page-item"><a class="page-link" (click)="page(2)">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+
+                        </div>
+                      
+                    <div class="col-md-6  text-center">
+                      <input class="btn btn-info btn-lg"   value="Edit Your Profile" routerLink="/updateprofile" (click)="updateprofile()" />
+                    </div>
+                        </div>
+             
+
+                    
+              
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+ 
+
+ 
+
